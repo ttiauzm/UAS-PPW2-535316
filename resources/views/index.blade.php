@@ -28,7 +28,7 @@
                 labels: ["Male", "Female"],
                 datasets: [{
                     label: 'Jumlah',
-                    data: [4644,4800],
+                    data: [{{ $totalLaki }}, {{ $totalPerempuan }}],
                     backgroundColor: [
                         '#3b82f6',
                         '#ec4899'
@@ -54,20 +54,14 @@
         new Chart(ctx2, {
             type: 'bar',
             data: {
-                labels: [
-                    "Software Engineer",
-                    "Data Analyst",
-                    "Project Manager",
-                    "System Administrator",
-                    "UI/UX Designer"
-                ],
+                labels: {!! $labelPekerjaan !!},
                 datasets: [{
                     label: 'Jumlah Pegawai',
-                    data: [110, 95, 85, 75, 70],
+                    data: {!! $jumlahPegawai !!},
                     backgroundColor: '#C0392B',
                     borderColor: '#922B21',
                     borderWidth: 1,
-                    borderRadius: 4, // rounded bars
+                    borderRadius: 4,
                     barPercentage: 0.6,
                 }]
             },
