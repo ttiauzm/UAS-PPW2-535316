@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->enum('gender', ['male','female']);
             $table->boolean('is_active')->default(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
