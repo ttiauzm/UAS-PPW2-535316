@@ -22,7 +22,7 @@
     <meta name="title" content="{{ config('app.name') }}">
     <meta name="description" content="Aplikasi ini merupakan proyek dasar Praktikum Pemrograman Web 2 di Universitas Gadjah Mada yang dirancang untuk mendukung proses pembelajaran mahasiswa dalam pengembangan aplikasi web.">
     <meta name="keywords" content="Praktikum Pemrograman Web 2, Universitas Gadjah Mada, proyek praktikum, aplikasi web, sistem informasi akademik, pembelajaran pemrograman, Laravel, pengembangan web, proyek mahasiswa"/>
-    <meta name="author" content="Abidurrahman Al-Faruq"/>
+    <meta name="author" content="Mutia Umniati Zupri"/>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -51,8 +51,8 @@
         <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
             <img src="{{ asset('img/logo.png') }}" class="h-12" alt="Logo UGM"/>
             <div class="flex flex-col leading-tight">
-                <span class="text-lg md:text-xl font-bold text-[#631913]">NAMA SAYA</span>
-                <span class="text-xs md:text-sm font-semibold text-[#631913]">NIM SAYA</span>
+                <span class="text-lg md:text-xl font-bold text-[#631913]">MUTIA UMNIATI ZUPRI</span>
+                <span class="text-xs md:text-sm font-semibold text-[#631913]">24/535316/SV/24196</span>
             </div>
         </a>
         <button id="menu-btn" type="button" class="inline-flex flex-none items-center p-1 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -108,9 +108,9 @@
                 <div>
                     <div class="text-white text-right">
                         <h2 class="mb-2 text-sm font-semibold uppercase">Identitas Mahasiswa</h2>
-                        <p>Nama Saya</p>
-                        <p>NIM Saya</p>
-                        <p>Kelas Praktikum</p>
+                        <p>Mutia Umniati Zupri</p>
+                        <p>24/535316/SV/24196</p>
+                        <p>TRPL24 B2</p>
                     </div>
                 </div>
             </div>
