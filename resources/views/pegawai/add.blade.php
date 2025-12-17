@@ -13,28 +13,20 @@
                 </a>
             </div>
 
-            {{-- FORM TAMBAH --}}
-            {{-- Action mengarah ke route STORE --}}
             <form action="{{ route('pegawai.store') }}" method="POST">
                 @csrf 
-                {{-- Tidak perlu @method('PUT') karena ini POST biasa --}}
 
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-                    
-                    {{-- 1. NAMA LENGKAP --}}
                     <div class="sm:col-span-2">
                         <label for="nama" class="block mb-2 text-sm font-medium text-gray-900">Nama Lengkap</label>
                         <input type="text" name="nama" id="nama" 
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5" 
                             placeholder="Contoh: Budi Santoso" 
                             value="{{ old('nama') }}" required> 
-                        {{-- old('nama') menjaga agar tulisan tidak hilang kalau ada error validasi --}}
                         @error('nama')
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
-
-                    {{-- 2. EMAIL --}}
                     <div class="sm:col-span-2">
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
                         <input type="email" name="email" id="email" 
@@ -45,8 +37,6 @@
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
-
-                    {{-- 3. PEKERJAAN (Dropdown) --}}
                     <div>
                         <label for="pekerjaan_id" class="block mb-2 text-sm font-medium text-gray-900">Pekerjaan</label>
                         <select id="pekerjaan_id" name="pekerjaan_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -61,8 +51,6 @@
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
-
-                    {{-- 4. STATUS (Dropdown - Default Aktif) --}}
                     <div>
                         <label for="is_active" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
                         <select id="is_active" name="is_active" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -70,8 +58,6 @@
                             <option value="0">Non-Aktif</option>
                         </select>
                     </div>
-
-                    {{-- 5. GENDER (Radio Button) --}}
                     <div class="sm:col-span-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900">Jenis Kelamin</label>
                         <div class="flex gap-4">
@@ -95,10 +81,27 @@
 
                 </div>
 
-                {{-- TOMBOL SIMPAN --}}
-                <button type="submit" class="mt-6 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800">
-                    Tambah Pegawai
-                </button>
+                {{-- AREA CAPTCHA --}}
+                    <div class="sm:col-span-2 mt-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-900">Kode Keamanan</label>
+                        <div class="flex gap-4 items-center">
+                            <div class="captcha-img border rounded-lg overflow-hidden">
+                                {!! captcha_img('flat') !!}
+                            </div>
+                            
+                            <input type="text" name="captcha" 
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5" 
+                                placeholder="Masukkan kode di samping" required>
+                        </div>
+                        @error('captcha')
+                            <p class="mt-1 text-xs text-red-600">Kode captcha salah!</p>
+                        @enderror
+                    </div>
+                <div class="flex justify-end gap-2 mt-2">
+                    <button type="reset" class="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">Reset</button>
+                    <button type="submit" class="rounded-md bg-green-600 px-4 py-2 text-sm text-white hover:bg-green-700 cursor-pointer">Simpan</button>
+                </div>
+                </div>
             </form>
 
         </div>

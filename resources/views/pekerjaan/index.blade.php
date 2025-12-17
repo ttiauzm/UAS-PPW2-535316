@@ -21,7 +21,7 @@
 
             <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <a href="{{ route('pekerjaan.add') }}" class="rounded-md bg-green-600 px-4 py-2 text-sm text-white hover:bg-green-700">
-                    Tambah Data
+                    Tambah Pekerjaan
                 </a>
                 <form class="flex w-full max-w-sm gap-2" autocomplete="off">
                     <input type="text" name="keyword" value="{{ request('keyword') }}" placeholder="Masukkan kata kunci..." class="w-full rounded-md border px-3 py-2 text-sm">

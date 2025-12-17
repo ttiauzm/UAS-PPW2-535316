@@ -36,6 +36,7 @@ class PegawaiController extends Controller
             'pekerjaan_id' => 'required|exists:pekerjaan,id',
             'gender' => 'required|in:male,female',
             'is_active' => 'required|boolean',
+            'captcha' => 'required|captcha',
         ]);
 
         $pegawai = new Pegawai();
@@ -64,6 +65,7 @@ class PegawaiController extends Controller
             'pekerjaan_id' => 'required',
             'gender' => 'required',
             'is_active' => 'required',
+            'captcha' => 'required|captcha',
         ]);
 
         $pegawai = Pegawai::findOrFail($id);

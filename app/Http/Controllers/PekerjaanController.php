@@ -30,6 +30,7 @@ class PekerjaanController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'deskripsi' => 'required|string',
+            'captcha' => 'required|captcha',
         ]);
 
         if ($validator->fails()) {
@@ -56,6 +57,7 @@ class PekerjaanController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'deskripsi' => 'required|string',
+            'captcha' => 'required|captcha',
         ]);
 
         if ($validator->fails()) return redirect()->back()->withErrors($validator)->withInput();
